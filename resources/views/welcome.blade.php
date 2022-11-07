@@ -15,9 +15,8 @@
 
     </head>
     <body>
-    <div class="container mt-3" >
-        <h1> VUE</h1>
-        <a href="#" class="btn btn-primary">Button</a>
+    <div class="container mt-3" align="center">
+        <h1>  "VUE" - "Vue-Chart" - "Laravel9"</h1>
     </div>
     <div id="app"></div>
     </body>
