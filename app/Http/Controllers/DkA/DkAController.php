@@ -17,3 +17,4 @@ class DkAController extends Controller
         return DkAResource::collection($dkA);
     }
 }
+
