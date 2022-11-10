@@ -14,7 +14,7 @@
     <Bar :chart-data="chartData" :height="100" :options="{responsive: true, maintainAspectRatio: true}" />
 
 </div>
-
+<DK_A></DK_A>
 </template>
 
 <script>
@@ -22,11 +22,13 @@
 import { Bar } from 'vue-chartjs'
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
 
+import DK_A from "../home/DK_A.vue";
+
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 export default {
     name: 'BarChart',
-    components: { Bar },
+    components: { Bar, DK_A },
     data() {
         return {
             chartData: {
