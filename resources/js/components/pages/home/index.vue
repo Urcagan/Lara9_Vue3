@@ -8,7 +8,7 @@
 <template>
         <div class="container">
             <h2>Bar Chart</h2>
-                <router-link to="/admin/home">Admin dashboard</router-link>
+                <router-link to="/DK_A/home">111 ДК-1А</router-link>
         </div>
 <div class="container">
     <Bar :chart-data="chartData" :height="100" :options="{responsive: true, maintainAspectRatio: true}" />

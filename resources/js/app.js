@@ -1,9 +1,15 @@
 import './bootstrap';
 
 import { createApp } from "vue";
-
 import App from "./components/App.vue"
-
 import router from "./router";
+import axios from "axios";
 
-createApp(App).use(router).mount("#app")
+
+const app =createApp(App)
+app.use(router)
+app.config.globalProperties.axios = axios
+app.mount('#app')
+
+// createApp(App).use(router).mount("#app")
+

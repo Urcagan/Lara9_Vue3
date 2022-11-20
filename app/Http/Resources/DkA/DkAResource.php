@@ -15,7 +15,7 @@ class DkAResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
+//            'id' => $this->id,
             'LocalTime' => $this->LocalTime,
             'PI7026A' => $this->PI7026A,
             'PI7028A' => $this->PI7028A,
