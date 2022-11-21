@@ -10,32 +10,71 @@
             <div :class="{'spinner-border text-primary': !loaded} " role="status"></div>
             <!-- ! Значек процесса загрузки -->
         </div>
-        <Line v-if="loaded" :chart-data="chartData" :height="100" :options="chartOptions"/>
+        <Line v-if="loaded" :chart-data="chartData"
+              :chart-options="chartOptions"
+              :chart-id="chartId"
+              :dataset-id-key="datasetIdKey"
+              :plugins="plugins"
+              :css-classes="cssClasses"
+              :styles="styles"
+              :width="width"
+              :height="height"
+        />
 
     </div>
 
 </template>
 
 <script>
-// DataPage.vue
-// import { Line } from 'vue-chartjs'
-// import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-//
-// ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
-import 'chart.js/auto';
+// import 'chart.js/auto'; // используется при леннивом спосоде
 import {Line} from 'vue-chartjs'
-import {Chart, Title} from "chart.js";
 
-Chart.register(Title)
-Chart.defaults.elements.line.borderWidth = 1 // Задает глобальное значение толщины всех линий
-Chart.defaults.elements.point.radius = 1  // Задает глобальное значение радиуса точки
-// Chart.defaults.backgroundColor = 'rgb(0,0,0)'
+import { Chart as ChartJS, Title, Tooltip, Legend, LineElement,LinearScale, PointElement,CategoryScale } from 'chart.js'
+//  Title, Tooltip, Legend, LineElement,LinearScale, PointElement,CategoryScale, Plugin
+
+ChartJS.register(Title,Tooltip,Legend,LineElement,LinearScale,PointElement,CategoryScale)
+// Title,Tooltip,Legend,LineElement,LinearScale,PointElement,CategoryScale
+
+ChartJS.defaults.elements.line.borderWidth = 1 // Задает глобальное значение толщины всех линий
+ChartJS.defaults.elements.point.radius = 1  // Задает глобальное значение радиуса точки
+ChartJS.defaults.elements.line.fill = false;
+//ChartJS.defaults.backgroundColor = 'rgb(211,27,27)' // заливка линии по умолчанию если нету св-ва backgroundColor:
+
 
 export default {
     name: 'LineChart',
     components: {Line},
-
+    props: {
+        chartId: {
+            type: String,
+            default: 'line-chart'
+        },
+        datasetIdKey: {
+            type: String,
+            default: 'label'
+        },
+        width: {
+            type: Number,
+            default: 400
+        },
+        height: {
+            type: Number,
+            default: 150
+        },
+        cssClasses: {
+            default: '',
+            type: String
+        },
+        styles: {
+            type: Object,
+            default: () => {}
+        },
+        plugins: {
+            type: Object,
+            default: () => {}
+        }
+    },
     data() {
         return {
             loaded: false,   // ! Признак загрузки данных //
@@ -74,6 +113,13 @@ export default {
             TI7043A: [],
             LI7008A: [],
 
+            // chartOptions: {
+            //     responsive: true,
+            //     title: {
+            //         display: true,
+            //         text: 'МГК 111-Н1А'
+            //     },
+            // }
         }
     },
 
@@ -146,7 +192,7 @@ export default {
                     {
                         label: 'PI7026A',
                         backgroundColor: '#63faff',
-                        borderColor: '#63FAFFFF',
+                        borderColor: '#63faff',
                         data: this.PI7026A,
                         // data: this.pointData.map(n => +n.PI7026A),
                         // borderWidth: 1,
@@ -218,9 +264,6 @@ export default {
                     },
 
 
-
-
-
                     // XVI7002A
                     // XVI7003A
                     // XVI7004A
@@ -247,22 +290,37 @@ export default {
 
         chartOptions() {
             return {
+
+                responsive: true,
+                maintainAspectRatio: true,
                 title: {
                     display: true,
                     text: 'МГК 111-Н1А'
                 },
-                responsive: true,
-                maintainAspectRatio: true,
-                scales: {
-                    'left-y-axis': {
-                        type: 'linear',
-                        position: 'left'
-                    },
-                    'right-y-axis': {
-                        type: 'linear',
-                        position: 'right'
-                    },
-                },
+
+                // scales: {
+                //     'left-y-axis': {
+                //         type: 'linear',
+                //         position: 'left'
+                //     },
+                //     'right-y-axis': {
+                //         type: 'linear',
+                //         position: 'right'
+                //     },
+                // },
+
+                // scales: {
+                //     x: {
+                //         title: {
+                //             display: true,
+                //             text: 'Month'
+                //         }
+                //     },
+                //     y: {
+                //         title: {
+                //             display: true,
+                //             text: 'Value'
+                //         },
             }/* mutable chart options */
         },
 
