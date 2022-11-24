@@ -139,6 +139,22 @@ export default {
             axios.get('/api/dk_a_data')
                 .then((response) => {
                     this.pointData = response.data.data;
+                    // console.log(this.pointData)
+
+                        // Получаем массив из первого элемента многомерного массива
+                    this.labelsData = this.pointData[0]
+                    // console.log(this.labelsData)
+
+                        //  Проверяем наличие в массиве элемента с ключем LocalTime и удаляем элемент если он есть
+                    if ("LocalTime" in this.labelsData) {
+                        delete this.labelsData["LocalTime"]
+                        // console.log(this.labelsData)
+
+                    }
+
+                    console.log(Object.keys(this.labelsData).length) // количество элементов в массиве
+                    console.log(Object.keys(this.labelsData)) //Получаем ключи ассоциативного массива
+                    // console.log(this.labelsData)
 
                     this.localTime = response.data.data.map(item => { return item.LocalTime });
                     this.PI7026A = response.data.data.map(item => { return item.PI7026A });
