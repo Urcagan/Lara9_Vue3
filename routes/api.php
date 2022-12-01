@@ -33,3 +33,7 @@ Route::group(['namespace'=>'App\Http\Controllers\DkA', 'prefix'=>'dk_a_json'], f
     Route::get('/', 'jsonController');
 
 });
+
+Route::group(['namespace'=>'App\Http\Controllers\DkA', 'prefix'=>'dk_a_top'], function (){
+    Route::get('/', 'DkAController_Top');
+});
