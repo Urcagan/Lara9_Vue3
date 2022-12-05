@@ -126,7 +126,7 @@ export default {
     async mounted() {
         this.loaded = false
 
-        // this.loadPointData();
+        this.loadPointData();
     },
 
     methods: {
