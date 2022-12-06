@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Http\Controllers\MGK\H1\A;
+
+use App\Http\Controllers\Controller;
+use App\Http\Resources\MGK\H1\A\H1AResourse;
+use App\Models\H1A;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+
+class H1A_Table_Controller extends Controller
+{
+
+    public function __invoke()
+    {
+       // поиск максимального id  для выявления последней записи
+        $maxId = DB::table('dk_a_points')->max('id');
+
+        // Поиск последних 12и записей
+        $data = DB::table('dk_a_points')
+            ->whereBetween('id', [$maxId-12, $maxId])
+            ->get();
+        return $data;
+//        $dkA = DK_A::all();
+//        $dkA = DB::select('select top 50 * from dk_a_points ');
+//        $dkA = DB::select('select * from dk_a_points where id = :id', ['id' => 2]);
+//        return DkAResource::collection($dkA);
+//        return $dkA;
+    }
+}
+
