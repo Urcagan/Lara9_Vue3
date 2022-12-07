@@ -157,7 +157,7 @@ export default {
                     // Получаем ссылку на нулевой элемент массива. Будем его использовать для получения ключей масива
                     // Получаем массив имен параметров с индексацией, который можно перебрать циклом
                     const KeyData = Object.keys(this.pointData[0])
-                    KeyData.shift()
+                    KeyData.shift() //Удаляет первый элемент массива
                     // console.log(KeyData)
 
                     // console.log(Object.keys(this.labelsData).length) // количество элементов в массиве

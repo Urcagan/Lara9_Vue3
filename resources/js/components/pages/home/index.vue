@@ -1,10 +1,3 @@
-<!--<template>-->
-<!--    <h2>Welcome to home pages website</h2>-->
-<!--    <div>-->
-<!--            <router-link to="/admin/home">Admin dashboard</router-link>-->
-<!--    </div>-->
-<!--</template>-->
-
 <template>
 
     <div class="container">
@@ -13,8 +6,9 @@
 
     <div class="container">
         <h2>Bar Chart</h2>
-        <router-link to="/DK_A/home">111 ДК-1А  </router-link>
-        <router-link to="/DK_A/pressure"> Давление </router-link>
+        <router-link class="btn btn-primary m-2" to="/DK_A/home">111 ДК-1А  </router-link>
+        <router-link class="btn btn-primary m-2" to="/DK_A/pressure"> Давление </router-link>
+        <router-link class="btn btn-primary m-2" :to="{name: 'DK_A_table'}"> Таблица Н1А </router-link>
 
     </div>
     <div class="container">

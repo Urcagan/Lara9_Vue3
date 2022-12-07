@@ -32,7 +32,7 @@ const routes = [
         path: '/DK_A/table',
         name: 'DK_A_table',
         // component: DK_A
-        component: ()=> import('../components/MGK/H1/A/table.vue')
+        component: ()=> import('../components/MGK/H1/A/tableDisplay.vue')
     },
 
     // Маршрут для несуществующего пути

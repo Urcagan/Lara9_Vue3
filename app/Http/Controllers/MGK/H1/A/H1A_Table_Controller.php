@@ -19,9 +19,9 @@ class H1A_Table_Controller extends Controller
 
         // Поиск последних 12и записей
         $data = DB::table('dk_a_points')
-            ->whereBetween('id', [$maxId-12, $maxId])
+            ->whereBetween('id', [$maxId-11, $maxId])
             ->get();
-        return $data;
+        return H1AResourse::collection($data);
 //        $dkA = DK_A::all();
 //        $dkA = DB::select('select top 50 * from dk_a_points ');
 //        $dkA = DB::select('select * from dk_a_points where id = :id', ['id' => 2]);
