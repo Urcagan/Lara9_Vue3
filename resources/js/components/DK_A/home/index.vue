@@ -119,7 +119,6 @@ export default {
             dataPoint: [],
             localTime: [],
             BigData: [],
-
         }
     },
 
@@ -257,7 +256,7 @@ export default {
                         fullSize: false,
                         align: 'start',
                         labels: {
-                            color: 'rgb(255, 99, 132)'
+                            color: 'rgb(0,0,0)'
                         },
                     },
 

@@ -142,7 +142,7 @@ export default {
     methods: {
         // получение данных
         loadData: function () {
-            axios.get('/api/H1bTable')
+            axios.get('/api/H1b/table')
                 .then(res => {
                         this.dataPoints = res.data.data;
                     const KeyData = Object.keys(this.dataPoints[0])

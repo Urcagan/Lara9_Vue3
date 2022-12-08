@@ -38,14 +38,15 @@ Route::group(['namespace'=>'App\Http\Controllers\DkA', 'prefix'=>'dk_a_top'], fu
     Route::get('/', 'DkAController_Top');
 });
 
-Route::group(['namespace'=>'App\Http\Controllers\MGK\H1\A', 'prefix'=>'H1aTable'], function (){
-    Route::get('/', 'H1A_Table_Controller');
-});
-Route::group(['namespace'=>'App\Http\Controllers\MGK\H1\A', 'prefix'=>'H1aPressure'], function (){
-    Route::get('/', 'PressureController');
+Route::group(['namespace'=>'App\Http\Controllers\MGK\H1\A', 'prefix'=>'H1a'], function (){
+    Route::get('/table', 'table_Controller');
+    Route::get('/pressure', 'PressureController');
+    Route::get('/zvi', 'zviController');
+    Route::get('/xvi', 'xviController');
+    Route::get('/ti', 'tiController');
 });
 
 
-Route::group(['namespace'=>'App\Http\Controllers\MGK\H1\B', 'prefix'=>'H1bTable'], function (){
-    Route::get('/', 'H1B_Table_Controller');
+Route::group(['namespace'=>'App\Http\Controllers\MGK\H1\B', 'prefix'=>'H1b'], function (){
+    Route::get('/table', 'H1B_Table_Controller');
 });

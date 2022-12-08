@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 
-class H1A_Table_Controller extends Controller
+class table_Controller extends Controller
 {
 
     public function __invoke()

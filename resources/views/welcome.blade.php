@@ -13,8 +13,10 @@
 {{--        @vite(['resources/sass/app.scss', 'resources/js/app.js'])--}}
         @vite(['resources/css/app.css','resources/js/app.js'])
 
+
+
     </head>
-    <body>
+    <body style="background-color: #bebed5">
     <div class="container mt-3" align="center">
 {{--        <h1>  "VUE" - "Vue-Chart" - "Laravel9"</h1>--}}
     </div>

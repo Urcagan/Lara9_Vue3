@@ -142,7 +142,7 @@ export default {
     methods: {
         // получение данных
         loadData: function () {
-            axios.get('/api/H1aTable')
+            axios.get('/api/H1a/table')
                 .then(res => {
                         this.dataPoints = res.data.data;
 

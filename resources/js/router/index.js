@@ -43,6 +43,31 @@ const routes = [
     },
 
     {
+        path: '/DK_A/pressure',
+        name: 'DK_A_pressure',
+        // component: DK_A
+        component: ()=> import('../components/MGK/H1/A/chartPressure.vue')
+    },
+    {
+        path: '/DK_A/ti',
+        name: 'DK_A_ti',
+        // component: DK_A
+        component: ()=> import('../components/MGK/H1/A/chartTI.vue')
+    },
+    {
+        path: '/DK_A/xvi',
+        name: 'DK_A_xvi',
+        // component: DK_A
+        component: ()=> import('../components/MGK/H1/A/chartXVI.vue')
+    },
+    {
+        path: '/DK_A/zvi',
+        name: 'DK_A_zvi',
+        // component: DK_A
+        component: ()=> import('../components/MGK/H1/A/chartZVI.vue')
+    },
+
+    {
         path: '/DK_B/table',
         name: 'DK_B_table',
         component: ()=> import('../components/MGK/H1/B/tableDisplay.vue')
