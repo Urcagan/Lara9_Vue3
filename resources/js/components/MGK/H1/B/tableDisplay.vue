@@ -1,7 +1,7 @@
 <template>
     <MenuBar></MenuBar>
     <div>
-        <h2 align="center">Режимный лист сырьевого насоса МГК 111-Н1А</h2>
+        <h2 align="center">Режимный лист сырьевого насоса МГК 111-Н1В</h2>
 
         <div class="container-fluid">
             <table id="tableDisplay" class="table table-primary table-striped table-hover  table-bordered table-sm" cellspacing="0" width="100%">
@@ -46,23 +46,23 @@
                 <tbody align="center">
                <tr v-for="item in dataPoints">
                    <td>{{item.LocalTime}}</td>
-                   <td>{{Math.floor(item.PI7026A*100)/100}}</td>
-                   <td>{{Math.floor(item.PI7028A*100)/100}}</td>
-                   <td>{{Math.floor(item.PI7024A*100)/100}}</td>
-                   <td>{{Math.floor(item.PDI7013A*100)/100}}</td>
-                   <td>{{Math.floor(item.ZVI7000A*100)/100}}</td>
-                   <td>{{Math.floor(item.ZVI7001A*100)/100}}</td>
-                   <td>{{Math.floor(item.ZVI7002A*100)/100}}</td>
-                   <td>{{Math.floor(item.ZVI7003A*100)/100}}</td>
-                   <td>{{Math.floor(item.KVI7000A*100)/100}}</td>
-                   <td>{{Math.floor(item.XVI7000A*100)/100}}</td>
-                   <td>{{Math.floor(item.XVI7001A*100)/100}}</td>
-                   <td>{{Math.floor(item.XVI7002A*100)/100}}</td>
-                   <td>{{Math.floor(item.XVI7003A*100)/100}}</td>
-                   <td>{{Math.floor(item.XVI7004A*100)/100}}</td>
-                   <td>{{Math.floor(item.XVI7005A*100)/100}}</td>
-                   <td>{{Math.floor(item.XVI7006A*100)/100}}</td>
-                   <td>{{Math.floor(item.XVI7007A*100)/100}}</td>
+                   <td>{{Math.floor(item.PI7026B*100)/100}}</td>
+                   <td>{{Math.floor(item.PI7028B*100)/100}}</td>
+                   <td>{{Math.floor(item.PI7024B*100)/100}}</td>
+                   <td>{{Math.floor(item.PDI7013B*100)/100}}</td>
+                   <td>{{Math.floor(item.ZVI7000B*100)/100}}</td>
+                   <td>{{Math.floor(item.ZVI7001B*100)/100}}</td>
+                   <td>{{Math.floor(item.ZVI7002B*100)/100}}</td>
+                   <td>{{Math.floor(item.ZVI7003B*100)/100}}</td>
+                   <td>{{Math.floor(item.KVI7000B*100)/100}}</td>
+                   <td>{{Math.floor(item.XVI7000B*100)/100}}</td>
+                   <td>{{Math.floor(item.XVI7001B*100)/100}}</td>
+                   <td>{{Math.floor(item.XVI7002B*100)/100}}</td>
+                   <td>{{Math.floor(item.XVI7003B*100)/100}}</td>
+                   <td>{{Math.floor(item.XVI7004B*100)/100}}</td>
+                   <td>{{Math.floor(item.XVI7005B*100)/100}}</td>
+                   <td>{{Math.floor(item.XVI7006B*100)/100}}</td>
+                   <td>{{Math.floor(item.XVI7007B*100)/100}}</td>
 
                </tr>
                 </tbody>
@@ -100,18 +100,18 @@
                 <tbody align="center">
                 <tr v-for="item in dataPoints">
                     <td>{{item.LocalTime}}</td>
-                    <td>{{Math.floor(item.TI7006A*100)/100}}</td>
-                    <td>{{Math.floor(item.TI7007A*100)/100}}</td>
-                    <td>{{Math.floor(item.TI7008A*100)/100}}</td>
-                    <td>{{Math.floor(item.TI7009A*100)/100}}</td>
-                    <td>{{Math.floor(item.TI7010A*100)/100}}</td>
-                    <td>{{Math.floor(item.TI7011A*100)/100}}</td>
-                    <td>{{Math.floor(item.TI7012A*100)/100}}</td>
-                    <td>{{Math.floor(item.TI7013A*100)/100}}</td>
-                    <td>{{Math.floor(item.TI7014A*100)/100}}</td>
-                    <td>{{Math.floor(item.TI7015A*100)/100}}</td>
-                    <td>{{Math.floor(item.TI7043A*100)/100}}</td>
-                    <td>{{Math.floor(item.LI7008A*100)/100}}</td>
+                    <td>{{Math.floor(item.TI7006B*100)/100}}</td>
+                    <td>{{Math.floor(item.TI7007B*100)/100}}</td>
+                    <td>{{Math.floor(item.TI7008B*100)/100}}</td>
+                    <td>{{Math.floor(item.TI7009B*100)/100}}</td>
+                    <td>{{Math.floor(item.TI7010B*100)/100}}</td>
+                    <td>{{Math.floor(item.TI7011B*100)/100}}</td>
+                    <td>{{Math.floor(item.TI7012B*100)/100}}</td>
+                    <td>{{Math.floor(item.TI7013B*100)/100}}</td>
+                    <td>{{Math.floor(item.TI7014B*100)/100}}</td>
+                    <td>{{Math.floor(item.TI7015B*100)/100}}</td>
+                    <td>{{Math.floor(item.TI7043B*100)/100}}</td>
+                    <td>{{Math.floor(item.LI7008B*100)/100}}</td>
                 </tr>
                 </tbody>
 
@@ -127,7 +127,7 @@ import axios from "axios";
 export default {
     name: "tableDisplay",
 
-    components: { MenuBar },
+    components:{MenuBar},
 
     data: function () {
         return {
@@ -142,10 +142,9 @@ export default {
     methods: {
         // получение данных
         loadData: function () {
-            axios.get('/api/H1aTable')
+            axios.get('/api/H1bTable')
                 .then(res => {
                         this.dataPoints = res.data.data;
-
                     const KeyData = Object.keys(this.dataPoints[0])
                     }
                 )
@@ -154,16 +153,8 @@ export default {
                     }
                 )
         },
-
-        // получение в массив всех имен точек
-        keyData: function (){
-            const KeyData = Object.keys(this.dataPoints[0])
-            console.log( KeyData)
-        },
     },
-
 }
-
 
 </script>
 

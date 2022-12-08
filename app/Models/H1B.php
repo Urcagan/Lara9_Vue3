@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DK_A extends Model
+class H1B extends Model
 {
     use HasFactory;
 
-    protected $table = 'MGK_H1A'; // Параметр указывающий какая таблица связана с этой моделью.
+    protected $table = 'MGK_H1B'; // Параметр указывающий какая таблица связана с этой моделью.
     // Параметр необязательный, но лучще принудительно указывать.
 
     protected $guarded = [];        // Строка разрешающая запись данных в таблицу (Защита от записи в фреймворке Laravel)

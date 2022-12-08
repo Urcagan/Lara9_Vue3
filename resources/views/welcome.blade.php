@@ -16,7 +16,7 @@
     </head>
     <body>
     <div class="container mt-3" align="center">
-        <h1>  "VUE" - "Vue-Chart" - "Laravel9"</h1>
+{{--        <h1>  "VUE" - "Vue-Chart" - "Laravel9"</h1>--}}
     </div>
     <div id="app"></div>
     </body>

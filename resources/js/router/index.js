@@ -1,5 +1,6 @@
 import {createRouter, createWebHistory} from "vue-router";
 
+
 import homePageIndex from '../components/pages/home/index.vue';
 // import indexDK_A from  '../components/DK_A/home/index.vue';
 import notFound from '../components/notFound.vue';
@@ -9,7 +10,13 @@ const routes = [
     // Pages
     {
         path: "/",
-        component: homePageIndex
+        name: 'MainPage',
+        component: () => import ('../components/main.vue'),
+    },
+    {
+        path: "/test",
+        name: 'Test',
+        component: homePageIndex,
     },
 
     // 111ДК 1 А
@@ -33,6 +40,12 @@ const routes = [
         name: 'DK_A_table',
         // component: DK_A
         component: ()=> import('../components/MGK/H1/A/tableDisplay.vue')
+    },
+
+    {
+        path: '/DK_B/table',
+        name: 'DK_B_table',
+        component: ()=> import('../components/MGK/H1/B/tableDisplay.vue')
     },
 
     // Маршрут для несуществующего пути

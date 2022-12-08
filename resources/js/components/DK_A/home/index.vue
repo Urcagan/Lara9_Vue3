@@ -1,8 +1,7 @@
 <template>
 
     <div class="container">
-        <h2>Line Chart</h2>
-        <router-link to="/">Home page</router-link>
+        <Menu></Menu>
     </div>
 
     <div class="container">
@@ -47,6 +46,7 @@
 
 <script>
 
+import Menu from "/resources/js/components/MGK/menuBar.vue"
 // import 'chart.js/auto'; // используется при леннивом спосоде
 import {Line} from 'vue-chartjs'
 
@@ -64,7 +64,7 @@ ChartJS.defaults.elements.line.fill = false;
 
 export default {
     name: 'LineChart',
-    components: {Line},
+    components: {Line, Menu},
     props: {
         chartId: {
             type: String,

@@ -41,3 +41,11 @@ Route::group(['namespace'=>'App\Http\Controllers\DkA', 'prefix'=>'dk_a_top'], fu
 Route::group(['namespace'=>'App\Http\Controllers\MGK\H1\A', 'prefix'=>'H1aTable'], function (){
     Route::get('/', 'H1A_Table_Controller');
 });
+Route::group(['namespace'=>'App\Http\Controllers\MGK\H1\A', 'prefix'=>'H1aPressure'], function (){
+    Route::get('/', 'PressureController');
+});
+
+
+Route::group(['namespace'=>'App\Http\Controllers\MGK\H1\B', 'prefix'=>'H1bTable'], function (){
+    Route::get('/', 'H1B_Table_Controller');
+});

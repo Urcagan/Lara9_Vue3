@@ -3,13 +3,9 @@
     <div class="container">
         <input type="datetime-local" />
     </div>
-
+        <MenuBar></MenuBar>
     <div class="container">
         <h2>Bar Chart</h2>
-        <router-link class="btn btn-primary m-2" to="/DK_A/home">111 ДК-1А  </router-link>
-        <router-link class="btn btn-primary m-2" to="/DK_A/pressure"> Давление </router-link>
-        <router-link class="btn btn-primary m-2" :to="{name: 'DK_A_table'}"> Таблица Н1А </router-link>
-
     </div>
     <div class="container">
         <Bar :chart-data="chartData" :height="100" :options="{responsive: true, maintainAspectRatio: true}"/>
@@ -24,13 +20,13 @@ import {Bar} from 'vue-chartjs'
 import {Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale} from 'chart.js'
 
 import DK_A from "../home/DK_A.vue";
-
+import MenuBar from "/resources/js/components/MGK/menuBar.vue"
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 export default {
     name: 'BarChart',
-    components: {Bar, DK_A},
+    components: {Bar, DK_A, MenuBar},
     data() {
         return {
             chartData: {
