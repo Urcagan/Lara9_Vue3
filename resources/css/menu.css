@@ -1,0 +1,7 @@
+.block__row{
+    display: flex;
+    justify-content: space-between;
+
+    border: 10px solid #ece89d;
+    margin: 0px 0px 20px 0px;
+}
