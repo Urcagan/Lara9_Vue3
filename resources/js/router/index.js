@@ -18,6 +18,13 @@ const routes = [
         name: 'Test',
         component: homePageIndex,
     },
+    
+     // Side bar
+     {
+        path: "/sidebar",
+        name: 'Sidebar',
+        component: () => import('../components/sidebar.vue')
+     },
 
     // 111ДК 1 А
     {

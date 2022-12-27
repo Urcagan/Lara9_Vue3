@@ -20,6 +20,7 @@
         "chart.js": "^3.9.1",
         "update": "^0.7.4",
         "vue": "^3.2.36",
+        "vue-awesome-sidebar": "^1.2.1",
         "vue-chartjs": "^4.1.2",
         "vue-loader": "^17.0.0",
         "vue-router": "^4.0.13"
